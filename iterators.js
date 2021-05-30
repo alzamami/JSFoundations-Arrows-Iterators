@@ -58,10 +58,13 @@ const hottestDays = function (temperatures, threshhold) {
  *       all previous functions
  *******************************************/
 const logHottestDays = function (temperatures, threshhold) {
-  temperatures
-    .filter((temperature) => temperature > threshhold)
-    .map((temperature) => (temperature - 32) * (5 / 9))
-    .forEach((temperature) => console.log(temperature));
+  const newArray = hottestDays(temperatures, threshhold);
+  const newArray2 = toCelsius(newArray);
+  return logger(newArray2);
+  //   temperatures
+  //     .filter((temperature) => temperature > threshhold)
+  //     .map((temperature) => (temperature - 32) * (5 / 9))
+  //     .forEach((temperature) => console.log(temperature));
 };
 
 // const logHottestDays = function (temperatures, threshhold) {
